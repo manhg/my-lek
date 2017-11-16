@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/4.1.2/picnic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/4.1.2/plugins.min.css">
+    <link rel="stylesheet" href="{{ '/static/gen/styles.css' | asseturl }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    {% block header %}{% endblock %}
+    {% block header_nav %}
+        <nav class="color-theme">
+            <a href="#" class="brand">
+                {% block header_logo %}
+                    My
+                {% endblock %}
+            </a>
+          
+            <!-- responsive-->
+            <input id="bmenub" type="checkbox" class="show">
+            <label for="bmenub" class="burger pseudo button">
+                メニュー
+            </label>
+          
+            <div class="menu">
+                <a class="pseudo button
+                    {% if this._path == '/' %}active{% endif　%}"
+                    href="{{ '/'|url }}">
+                    ようこそ
+                </a>
+                
+                {% for href, title in [
+                    ['/blog', 'ニュース'],
+                    ['/access', 'アクセス'],
+                ] %}
+                    <a class="pseudo button
+                        {% if this.is_child_of(href) %}active{% endif %}"
+                        href="{{ href|url }}">
+                        {{ title }}
+                    </a>
+                {% endfor %}
+            </div>
+        </nav>
+    {% endblock %}
+    {% block before_body %}{% endblock %}
+    <section class="page">
+        <div class="centering">
+            {% block body %}{% endblock %}
+        </div>
+    </section>
+    {% block after_body %}{% endblock %}
+    {% block footer %}
+    <footer class="color-theme">
+        <section class=centering>
+        </section>
+    </footer>
+    {% endblock %}
+    <script src="{{ '/static/gen/app.js'| asseturl  }}" charset="utf-8"></script>
+    {% block inline_script %}{% endblock %}
+</body>
+</html>

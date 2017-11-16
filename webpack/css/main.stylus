@@ -1,0 +1,64 @@
+$theme = #283f80
+body
+    font-family: serif
+section
+    display: block
+nav
+    // position: relative
+    border-bottom: solid 4px lighten($theme, 40%);
+footer
+    border-top: solid 4px lighten($theme, 40%);
+    
+    
+body>header
+    height: 50px
+    
+.shadow
+    text-shadow: 0px 2px 2px rgba(0,0,0, 0.4);
+    
+.text-center
+    text-align: center
+    
+.text-big
+    font-size: 160%;
+    
+.color-theme
+    &, .menu
+        background: $theme
+        background: linear-gradient(to right, $theme, lighten($theme, 20%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    color: white
+    
+    a, label
+      color: white !important
+    a.active
+        background: #0080bf
+        color: white
+    a:hover, a:active
+        background: #0080bf !important
+        color: white !important
+
+h1, .h1, h2, .h2, h3, .h3
+  margin: 7px 0
+  color: #283f80
+  font-weight: bold
+
+header a.navbar-brand.logo img
+  height: 78px
+
+
+.page
+    padding: 10px
+    margin-top: 50px !important
+    line-height: 160%
+    min-height: calc(100vh - 150px)
+    
+footer
+    padding: 3em
+    
+#lektor-edit-link
+    bottom: 10px;
+    right: 10px;
+    top: unset !important;
+    
+    

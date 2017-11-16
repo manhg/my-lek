@@ -1,0 +1,16 @@
+[project]
+name = my
+
+[packages]
+lektor-webpack-support = 0.3
+
+[pagination]
+enabled = yes
+per_page = 10
+
+
+[servers.production]
+name = Production
+enabled = yes
+default = yes
+target = rsync://deploy@server:/var/www

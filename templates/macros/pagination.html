@@ -1,0 +1,18 @@
+{% macro render_pagination(pagination) %}
+  <div class="pagination">
+    ページ
+    {% if pagination.has_prev %}
+      <a class="pseudo button"
+        href="{{ pagination.prev|url }}">
+        &laquo; 前へ　</a>
+    {% else %}
+    {% endif %}
+    ※ {{ pagination.page }} ※
+    {% if pagination.has_next %}
+        <a class="pseudo button"
+            href="{{ pagination.next|url }}">
+            次へ &raquo;</a>
+    {% else %}
+    {% endif %}
+  </div>
+{% endmacro %}
